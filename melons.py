@@ -1,6 +1,10 @@
 """This file should have our melon-type classes in it."""
 
-class Watermelon(object):
+class Melon(object):
+    BASE_MELON_PRICE = 5.00
+
+
+class Watermelon(Melon):
     def __init__(self):
         self.name = "watermelon"
         self.color = "green"
@@ -9,7 +13,7 @@ class Watermelon(object):
         self.seasons = ['Fall', 'Summer']
 
     def get_price(self,qty):
-        pricetag = 5.0
+        pricetag = self.BASE_MELON_PRICE
         if qty >= 3:
             price = pricetag * qty * (0.75)
         else:
@@ -17,7 +21,7 @@ class Watermelon(object):
         return price
 
 
-class Cantaloupe(object):
+class Cantaloupe(Melon):
     def __init__(self):
         self.name = "cantaloupe"
         self.color = "tan"
@@ -26,7 +30,7 @@ class Cantaloupe(object):
         self.seasons = ['Spring', 'Summer']
 
     def get_price(self,qty):
-        pricetag = 5.0
+        pricetag = self.BASE_MELON_PRICE
         if qty >= 5:
             price = pricetag * qty * (0.50)
         else:
@@ -34,7 +38,7 @@ class Cantaloupe(object):
         return price
 
 
-class Casaba(object):
+class Casaba(Melon):
     def __init__(self):
         self.name = "casaba"
         self.color = "green"
@@ -43,10 +47,10 @@ class Casaba(object):
         self.seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 
     def get_price(self,qty):
-        pricetag = 9.0
+        pricetag = (self.BASE_MELON_PRICE+1.0) *1.5
         return pricetag*qty
 
-class Sharlyn(object):
+class Sharlyn(Melon):
     def __init__(self):
         self.name = "sharlyn"
         self.color = "tan"
@@ -55,11 +59,11 @@ class Sharlyn(object):
         self.seasons = ['Summer']
 
     def get_price(self,qty):
-        pricetag = 5.0*1.5
+        pricetag = self.BASE_MELON_PRICE*1.5
         return pricetag*qty
 
 
-class SantaClaus(object):
+class SantaClaus(Melon):
     def __init__(self):
         self.name = "santa claus"
         self.color = "green"
@@ -68,11 +72,11 @@ class SantaClaus(object):
         self.seasons = ['Winter', 'Spring']
 
     def get_price(self,qty):
-        pricetag = 7.5
+        pricetag = self.BASE_MELON_PRICE *1.5
         return pricetag*qty
 
 
-class Christmas(object):
+class Christmas(Melon):
     def __init__(self):
         self.name = "christmas"
         self.color = "green"
@@ -81,11 +85,11 @@ class Christmas(object):
         self.seasons = ['Winter']
 
     def get_price(self,qty):
-        pricetag = 5
+        pricetag = self.BASE_MELON_PRICE
         return pricetag*qty
 
 
-class HornedMelon(object):
+class HornedMelon(Melon):
     def __init__(self):
         self.name = "horned melon"
         self.color = "yellow"
@@ -94,11 +98,11 @@ class HornedMelon(object):
         self.seasons = ['Summer']
 
     def get_price(self,qty):
-        pricetag = 7.5
+        pricetag = self.BASE_MELON_PRICE *1.5
         return pricetag*qty
 
 
-class Xigua(object):
+class Xigua(Melon):
     def __init__(self):
         self.name = "xigua"
         self.color = "black"
@@ -108,11 +112,11 @@ class Xigua(object):
 
     def get_price(self,qty):
         # This is one bougie melon. The Amex Black of melons. 
-        pricetag = 5.0 * 1.5 * 2
+        pricetag = self.BASE_MELON_PRICE * 1.5 * 2
         return pricetag * qty
 
 
-class Ogen(object):
+class Ogen(Melon):
     def __init__(self):
         self.name = "ogen"
         self.color = "tan"
@@ -122,5 +126,5 @@ class Ogen(object):
 
     def get_price(self,qty):
         # This is one bougie melon. The Amex Black of melons. 
-        pricetag = 6.0
+        pricetag = self.BASE_MELON_PRICE + 1
         return pricetag * qty
